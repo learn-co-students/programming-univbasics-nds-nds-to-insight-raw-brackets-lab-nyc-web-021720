@@ -3,14 +3,28 @@ require 'directors_database'
 
 
 
-pp directors_database
+nds = directors_database
+pp nds[0] = #:name :movies => :title : studio :worldwide gross: releaseyear
+
 
 
 def directors_totals(nds)
-  end
+news = {}
+index = 0
 
 
+while nds[index] do
+  sum = 0
+  movie_num = 0
+while nds[index][:movies][movie_num] do
 
+  sum += nds[index][:movies][movie_num][:worldwide_gross]
+  movie_num += 1
+end
+
+news[nds[index][:name]] = sum
+index += 1
+end
 
 
   # Remember, it's always OK to pretty print what you get *in* to make sure
@@ -29,5 +43,5 @@ def directors_totals(nds)
   #
   # Be sure to return the result at the end!
   nil
-
+return news
 end

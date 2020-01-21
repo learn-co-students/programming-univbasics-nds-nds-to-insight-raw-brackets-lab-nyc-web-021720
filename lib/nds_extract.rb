@@ -9,12 +9,14 @@ def directors_totals(nds)
     directors_name = nds[outer_index][:name]
     result[directors_name] = 0
     nds[outer_index][:movies].length.times do |i|
-      result[directors_name] += nds[outer_index][:movies][i][:worldwide_gross] 
+      gross = nds[outer_index][:movies][i][:worldwide_gross]
+      result[directors_name] += gross
     end
     outer_index += 1 
   end
   pp result
 end
+
 
 
 
